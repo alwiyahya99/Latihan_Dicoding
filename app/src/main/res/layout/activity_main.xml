@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_move_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pindah_activity" />
+
+    <Button
+        android:id="@+id/btn_move_with_data_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pindah_activity_dengan_data" />
+
+    <Button
+        android:id="@+id/btn_dial_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dial_a_number" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hitung_volume_balok" />
+
+    <Button
+        android:id="@+id/btn_view_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/latihan_view_group" />
+
+    <Button
+        android:id="@+id/btn_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/latihan_recycleview" />
+
+    <Button
+        android:id="@+id/btn_Parcelabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Latihan Parcelabel" />
+</LinearLayout>
