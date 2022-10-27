@@ -5,9 +5,24 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+
+    //    private lateinit var tvResult: TextView
+    private val resultLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == MoveResultActivity.RESULT_CODE && result.data != null) {
+            val selectedValue =
+                result.data?.getIntExtra(MoveResultActivity.EXTRA_SELECTED_VALUE, 0)
+//            tvResult.text = "Hasil : $selectedValue"
+            Toast.makeText(getApplicationContext(), "Hasil : $selectedValue", Toast.LENGTH_SHORT)
+                .show();
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +34,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val btnLatihanViewGroup: Button = findViewById(R.id.btn_view_group)
         val btnRecyclerView: Button = findViewById(R.id.btn_RecyclerView)
         val btnParcelabel: Button = findViewById(R.id.btn_Parcelabel)
+        val btnResultAcrivity: Button = findViewById(R.id.btn_ResultActivity)
+        btnResultAcrivity.setOnClickListener(this)
         btnParcelabel.setOnClickListener(this)
         btnMoveActivity.setOnClickListener(this)
         btnMoveWithDataActivity.setOnClickListener(this)
@@ -49,7 +66,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(dialPhoneInten)
             }
             R.id.btn_view_group -> {
-                val viewGroupIntent = Intent(this@MainActivity, LatihanViewGroupActivity::class.java)
+                val viewGroupIntent =
+                    Intent(this@MainActivity, LatihanViewGroupActivity::class.java)
                 startActivity(viewGroupIntent)
             }
             R.id.btn_RecyclerView -> {
@@ -64,9 +82,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     "Bandung"
                 )
 
-                val MoveWithObjectActivity = Intent(this@MainActivity, ParcelabelActivity::class.java)
+                val MoveWithObjectActivity =
+                    Intent(this@MainActivity, ParcelabelActivity::class.java)
                 MoveWithObjectActivity.putExtra(ParcelabelActivity.EXTRA_PERSON, person)
                 startActivity(MoveWithObjectActivity)
+            }
+            R.id.btn_ResultActivity -> {
+                val viewGroupIntent = Intent(this@MainActivity, MoveResultActivity::class.java)
+                resultLauncher.launch(viewGroupIntent)
             }
         }
     }

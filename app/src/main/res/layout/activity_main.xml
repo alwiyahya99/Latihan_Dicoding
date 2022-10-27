@@ -46,4 +46,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Latihan Parcelabel" />
+
+    <Button
+        android:id="@+id/btn_ResultActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Result Activity" />
 </LinearLayout>
