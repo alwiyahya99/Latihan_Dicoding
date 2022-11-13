@@ -52,4 +52,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Result Activity" />
+
+    <Button
+        android:id="@+id/btn_FragmentActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fragment Activity" />
 </LinearLayout>

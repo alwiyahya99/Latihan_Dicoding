@@ -35,6 +35,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val btnRecyclerView: Button = findViewById(R.id.btn_RecyclerView)
         val btnParcelabel: Button = findViewById(R.id.btn_Parcelabel)
         val btnResultAcrivity: Button = findViewById(R.id.btn_ResultActivity)
+        val btnFragmentAcrivity: Button = findViewById(R.id.btn_FragmentActivity)
+        btnFragmentAcrivity.setOnClickListener(this)
         btnResultAcrivity.setOnClickListener(this)
         btnParcelabel.setOnClickListener(this)
         btnMoveActivity.setOnClickListener(this)
@@ -90,6 +92,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_ResultActivity -> {
                 val viewGroupIntent = Intent(this@MainActivity, MoveResultActivity::class.java)
                 resultLauncher.launch(viewGroupIntent)
+            }
+            R.id.btn_FragmentActivity -> {
+                val viewGroupIntent = Intent(this@MainActivity, LatihanFragmentActivity::class.java)
+                startActivity(viewGroupIntent)
             }
         }
     }
