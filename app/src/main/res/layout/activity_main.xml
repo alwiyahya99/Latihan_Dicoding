@@ -58,4 +58,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Fragment Activity" />
+
+    <Button
+        android:id="@+id/btn_FragmentDataActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kirim Data Antar Fragment" />
 </LinearLayout>
