@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(viewGroupIntent)
             }
             R.id.btn_FragmentDataActivity -> {
-                val viewGroupIntent = Intent(this@MainActivity, DetailCategoryFragment::class.java)
+                val viewGroupIntent = Intent(this@MainActivity, LatihanFragmentActivity::class.java)
                 startActivity(viewGroupIntent)
             }
         }
